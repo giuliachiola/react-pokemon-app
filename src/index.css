@@ -19,6 +19,8 @@ body {
 .card {
   padding: 20px;
   text-align: center;
+  height: 260px;
+  overflow: hidden;
 }
 
 .card-title {
@@ -28,6 +30,11 @@ body {
 .card-img {
   display: inline-block;
   width: 50%;
+}
+
+.card-description {
+  max-height: 100px;
+  overflow-y: auto;
 }
 
 .pagination {
