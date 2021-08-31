@@ -13,7 +13,7 @@ import axios from 'axios'
  */
 
 function App() {
-  const [pokemon, setPokemon] = useState([])
+  const [pokemonList, setPokemonList] = useState([])
   const [currentPageUrl, setCurrentPageUrl] = useState('https://pokeapi.co/api/v2/pokemon')
   const [prevPageUrl, setPrevPageUrl] = useState('https://pokeapi.co/api/v2/pokemon')
   const [nextPageUrl, setNextPageUrl] = useState('https://pokeapi.co/api/v2/pokemon')
@@ -33,7 +33,7 @@ function App() {
       setLoading(false)
       setPrevPageUrl(res.data.previous)
       setNextPageUrl(res.data.next)
-      setPokemon(res.data.results.map(p => p.name))
+      setPokemonList(res.data.results.map(p => p.name))
     })
 
     /**
@@ -55,7 +55,7 @@ function App() {
 
   return (
     <>
-      <PokemonList pokemon={pokemon}/>
+      <PokemonList pokemonList={pokemonList}/>
       <Pagination
         goToPrevPage={prevPageUrl ? goToPrevPage : null}
         goToNextPage={nextPageUrl ? goToNextPage : null}
