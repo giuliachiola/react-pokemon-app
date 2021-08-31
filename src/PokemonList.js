@@ -3,9 +3,9 @@ import Card from './Card'
 
 export default function PokemonList({pokemonList}) {
   return (
-    <div>
+    <div className="cards-grid">
       {pokemonList.map(p => (
-        <Card pokemon={p}/>
+        <Card pokemon={p} key={p.url}/>
       ))}
     </div>
   )

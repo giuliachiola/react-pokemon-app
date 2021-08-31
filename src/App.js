@@ -3,6 +3,8 @@ import PokemonList from './PokemonList';
 import Pagination from './Pagination';
 import axios from 'axios'
 
+import './index.css'
+
 /**
  * https://pokeapi.co/api/v2/pokemon RESPONSE:
  *
@@ -54,13 +56,13 @@ function App() {
   if (isLoading) return 'Loading...'
 
   return (
-    <>
+    <div className="container">
       <PokemonList pokemonList={pokemonList}/>
       <Pagination
         goToPrevPage={prevPageUrl ? goToPrevPage : null}
         goToNextPage={nextPageUrl ? goToNextPage : null}
       />
-    </>
+    </div>
   );
 }
 
